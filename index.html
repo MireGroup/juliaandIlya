@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Для Юли ♥</title>
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ec;--bg2:#fff1e6;--ink:#6b3a4a;--card:#fffaf6;--pink:#f4a9bd;--pink2:#ee8fa9;--pink3:#f8c3d2;--shadow:rgba(180,80,110,.25);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#3a1f2b;--bg2:#2e2030;--ink:#ffe3ec;--card:#4a2c3a;--shadow:rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg1:#3a1f2b;--bg2:#2e2030;--ink:#ffe3ec;--card:#4a2c3a;--shadow:rgba(0,0,0,.4)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--ink);font-family:'Nunito',system-ui,sans-serif;overflow-x:hidden}
+.script{font-family:'Marck Script',cursive}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.hearts span{position:absolute;bottom:-40px;color:var(--pink2);opacity:.5;animation:up linear infinite}
+@keyframes up{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.screen{position:relative;min-height:100%;display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;text-align:center}
+.screen.on{display:flex}
+h1{font-size:clamp(34px,8vw,52px);margin:8px 0 4px;font-weight:400}
+.hint{opacity:.75;margin:26px 0 0;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.cat{width:110px;height:110px}
+.env{position:relative;width:min(340px,86vw);height:min(231px,58.5vw);margin:34px auto 0;cursor:pointer;filter:drop-shadow(0 12px 18px var(--shadow))}
+.env>*{position:absolute}
+.back{inset:0;background:var(--pink);border-radius:8px}
+.paper{left:7%;right:7%;top:7%;bottom:7%;background:#fffaf5;border-radius:6px;transition:transform .8s .55s;display:flex;align-items:center;justify-content:center;color:#b0587a;font-size:26px;z-index:1}
+.open .paper{transform:translateY(-58%)}
+.front{inset:0;background:var(--pink3);clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);border-radius:8px;z-index:2}
+.flap{left:0;right:0;top:0;height:60%;background:var(--pink2);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .6s;z-index:3}
+.open .flap{transform:rotateX(180deg);z-index:0}
+.seal{left:50%;top:49%;transform:translate(-50%,-50%);font-size:34px;color:#d6456f;z-index:4;transition:opacity .3s}
+.open .seal{opacity:0}
+.overlay{position:fixed;inset:0;display:none;align-items:flex-start;justify-content:center;background:rgba(120,40,70,.35);overflow-y:auto;padding:20px 14px;z-index:5}
+.overlay.on{display:flex}
+.letter{max-width:620px;width:100%;margin:auto;background:var(--card);border-radius:16px;padding:30px 24px;box-shadow:0 18px 40px var(--shadow);animation:rise .8s both;text-align:left;border:2px dashed var(--pink)}
+@keyframes rise{from{transform:translateY(60px) scale(.9);opacity:0}}
+.letter h2{font-size:34px;margin:0 0 14px;font-weight:400;color:#d6456f}
+.letter p{line-height:1.75;margin:0 0 12px;font-size:17px}
+.sign{text-align:right;font-size:26px;margin-top:18px}
+.btn{font:600 16px 'Nunito',sans-serif;border:0;border-radius:999px;padding:12px 26px;margin:6px;background:#e5617f;color:#fff;cursor:pointer;box-shadow:0 6px 14px var(--shadow)}
+.btn.alt{background:var(--card);color:var(--ink)}
+.album{width:min(420px,92vw)}
+.page{border-radius:22px;padding:26px 18px 22px;box-shadow:0 14px 30px var(--shadow);border:6px solid var(--card);min-height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#6b3a4a;animation:rise .6s both}
+.page .cats{display:flex;gap:4px;align-items:flex-end}
+.page .cats svg{width:112px;height:112px}
+.page h3{font-size:32px;margin:14px 0 6px;font-weight:400}
+.page p{margin:0;max-width:300px;line-height:1.5}
+.dots{margin:14px 0 4px;color:var(--pink2);letter-spacing:6px}
+
+html,body{-webkit-tap-highlight-color:transparent}
+.screen{min-height:100dvh}
+.album{width:min(440px,94vw)}
+.frame{position:relative;background:#fffdf9;padding:12px 12px 48px;border-radius:10px;box-shadow:0 14px 30px var(--shadow);transform:rotate(-1.2deg);touch-action:pan-y;user-select:none;animation:rise .5s both}
+.frame img{display:block;width:100%;height:min(56dvh,520px);object-fit:contain;border-radius:4px;background:#f9dfe7}
+.frame .cap{position:absolute;left:0;right:0;bottom:9px;font-size:24px;color:#d6456f}
+.tape{position:absolute;top:-12px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(244,169,189,.75);transform:rotate(3deg)}
+.frame .kit{position:absolute;right:-12px;bottom:-16px;width:62px;height:62px}
+.cnt{margin:16px 0 4px;color:var(--pink2);font-weight:600}
+.btn{min-height:46px}
+@media(max-width:480px){.overlay{padding:12px 10px calc(12px + env(safe-area-inset-bottom,0px))}.letter{padding:22px 16px}.letter h2{font-size:30px}.letter p{font-size:16px;line-height:1.7}.cat{width:92px;height:92px}.sign{font-size:24px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="k" viewBox="0 0 100 100">
+<path d="M16 42 L20 6 L46 26Z M84 42 L80 6 L54 26Z" fill="var(--c)"/>
+<path d="M24 34 L25 16 L38 27Z M76 34 L75 16 L62 27Z" fill="#f9b4c6"/>
+<ellipse cx="50" cy="56" rx="37" ry="33" fill="var(--c)"/>
+<circle cx="36" cy="52" r="5" fill="#5a3a3a"/><circle cx="64" cy="52" r="5" fill="#5a3a3a"/>
+<circle cx="34.5" cy="50" r="1.7" fill="#fff"/><circle cx="62.5" cy="50" r="1.7" fill="#fff"/>
+<ellipse cx="27" cy="64" rx="7" ry="4.5" fill="#f58ba5" opacity=".45"/><ellipse cx="73" cy="64" rx="7" ry="4.5" fill="#f58ba5" opacity=".45"/>
+<path d="M46 61h8l-4 5z" fill="#f2748f"/>
+<path d="M50 66q-4 6-10 2M50 66q4 6 10 2" fill="none" stroke="#5a3a3a" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M14 58h16M14 66l15-3M86 58H70M86 66l-15-3" stroke="#5a3a3a" stroke-width="1.2" opacity=".5" stroke-linecap="round"/>
+</symbol></defs></svg>
+<div class="hearts" id="hearts"></div>
+
+<section class="screen on" id="s1">
+<svg class="cat" style="--c:#fbd8b8"><use href="#k"/></svg>
+<h1 class="script">Для Юли ♥</h1>
+<div class="env" id="env"><div class="back"></div><div class="paper script">Для тебя…</div><div class="front"></div><div class="flap"></div><div class="seal">♥</div></div>
+<p class="hint">Нажми на конверт, чтобы открыть</p>
+</section>
+
+<div class="overlay" id="ov"><div class="letter">
+<h2 class="script">Дорогая моя любимая Юля!</h2>
+<p>Спешу признаться тебе в том, что сильно люблю тебя!)) Я благодарен Богу, что подарил мне тебя, встреча с тобой стала самой лучшей в моей жизни)</p>
+<p>Помню, как я приехал забирать тебя с ХГ, тогда это была наша встреча) Я волновался в тот день, потому что думал, что не получится, но получилось) Я увидел тебя, ты была очень красивой) и с первых секунд очаровала меня своею красотой.</p>
+<p>Свой первый поцелуй, без обдумываний, я подарил тебе) и это было самым лучшим решением) Это был первый раз, когда я кого-то поцеловал, а затем взял за руку и повёл сам. До тебя я стеснялся и был не уверен в себе в общении с девушками, обычно я ни с кем не разговаривал и был невидимкой, а моя доброта была игрой для кого-то.</p>
+<p>Помнишь, как мы гуляли рядом с парком и зашли на мостик? Я считаю, это были самые лучшие минуты) Внутри меня будто цветы расцвели, ты заставила биться моё сердце сильнее))</p>
+<p>Помнишь, как я провожал тебя, держа за ручку? Эта дорога была прекрасна: твой голос, твой взгляд, я погружался всё глубже в твои красивые глаза, в них я видел себя, маленького котёнка, который ищет настоящей любви, со сломанной судьбой, похожую на мою.</p>
+<p>Нашу встречу я считаю даром. Считаю, что мы созданы друг для друга, и несмотря на всё, что мы прошли, на все наши ссоры, грусть и радость, смех и слёзы, я буду любить тебя до конца своих дней! Я верю, что ты та самая, и я хочу быть с тобой до конца!</p>
+<p>Люблю тебя, мой маленький котёночек)))</p>
+<div class="sign script">Дементьев Илья ♥</div>
+<div style="text-align:center;margin-top:18px"><button class="btn" id="toAlbum">Открыть наш альбом 📖</button></div>
+</div></div>
+
+<section class="screen" id="s2">
+<h1 class="script">Наш альбом ♥</h1>
+<div class="album"><div class="frame" id="fr"><i class="tape"></i><img id="im" alt="Наше фото"><svg class="kit" style="--c:#fbd8b8"><use href="#k"/></svg><div class="cap script" id="cap"></div></div>
+<div class="cnt" id="cnt"></div>
+<div><button class="btn alt" id="prev">‹</button><button class="btn alt" id="next">›</button></div>
+<button class="btn" id="reread">Перечитать письмо ✉️</button></div>
+</section>
+
+<script>
+var H=document.getElementById('hearts');
+for(var i=0;i<22;i++){var s=document.createElement('span');s.textContent='♥';s.style.left=Math.random()*100+'%';s.style.fontSize=(12+Math.random()*22)+'px';s.style.animationDuration=(9+Math.random()*10)+'s';s.style.animationDelay=(-Math.random()*14)+'s';H.appendChild(s)}
+function $(i){return document.getElementById(i)}
+function cat(c){return '<svg style="--c:'+c+'"><use href="#k"/></svg>'}
+var PH=["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg", "07.jpg", "08.jpg", "09.jpg", "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg", "19.jpg", "20.jpg"];
+var n=0;
+function show(){var f=$('fr');f.style.animation='none';f.offsetHeight;f.style.animation='';
+$('im').src=PH[n];$('cap').textContent=n==PH.length-1?'Люблю тебя, котёночек ♥':'♥';
+f.style.transform='rotate('+(n%2?1.2:-1.2)+'deg)';$('cnt').textContent=(n+1)+' / '+PH.length}
+function step(d){n=(n+PH.length+d)%PH.length;show()}
+$('prev').onclick=function(){step(-1)};
+$('next').onclick=function(){step(1)};
+var tx=null;var fr=$('fr');
+fr.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+fr.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>40)step(dx<0?1:-1)});
+fr.onclick=function(){step(1)};
+document.addEventListener('keydown',function(e){if($('s2').classList.contains('on')){if(e.key=='ArrowRight')step(1);if(e.key=='ArrowLeft')step(-1)}});
+function go(a,b){$(a).classList.remove('on');$(b).classList.add('on')}
+$('env').onclick=function(){if(this.classList.contains('open'))return;this.classList.add('open');setTimeout(function(){$('ov').classList.add('on')},1500)};
+$('toAlbum').onclick=function(){$('ov').classList.remove('on');go('s1','s2');show()};
+$('reread').onclick=function(){$('ov').classList.add('on')};
+show();
+</script>
+</body>
+</html>
